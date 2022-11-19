@@ -1,38 +1,22 @@
-#include <iostream>
-#include <iomanip>
+#include "phonebook.hpp"
+#include "contact.hpp"
 
-class PhoneBook: private Contact //подумать с защитой
+int main(void)
 {
-public:
-	Contact[8];
-	PhoneBook()
+	PhoneBook	Phonebook_instance;
+	std::string	str;
+
+	while (1)
 	{
-		for (int i; i < 8; i++)
-			Contact[i] = NULL;
+		std::cout << "Choose command: ADD or SEARCH or EXIT\n> ";
+		std::cin >> str;
+		if (str == "ADD")
+			Phonebook_instance.Add();
+		else if (str == "SEARCH")
+			Phonebook_instance.Search();
+		else if (str == "EXIT")
+			Phonebook_instance.Exit();
+		else
+			std::cout << "Wrong command. Try again\n";
 	}
-	void	add();
-	
-}
-
-class Contact
-{
-public:
-	int		index;
-	string	first_name;
-	string	last_name;
-	string	nickname;
-	string	phone_number;
-	string	darkest_secret;
-}
-
-void	PhoneBook::get_contact_array_size(Contact)
-
-void	PhoneBook::add()
-{
-	
-}
-
-int main()
-{
-	
 }

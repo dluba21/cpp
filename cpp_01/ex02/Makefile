@@ -2,10 +2,10 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 CC			= c++
 RM			= rm -f
 OBJ			= ${SRC:.cpp=.o}
-SRC			= main.cpp phonebook.cpp contact.cpp
-INC			= phonebook.hpp contact.hpp
+SRC			= main.cpp
+INC			=
 
-NAME		= phonebook
+NAME		= hi_this_is_brain
 
 ${NAME}:	${OBJ}
 					${CC} ${CFLAGS} ${OBJ} -o $@
@@ -24,3 +24,8 @@ fclean:		clean
 re: 			fclean all
 
 .PHONY : 	all clean fclean re
+
+
+
+
+

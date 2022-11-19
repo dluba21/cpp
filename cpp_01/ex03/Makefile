@@ -2,10 +2,10 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 CC			= c++
 RM			= rm -f
 OBJ			= ${SRC:.cpp=.o}
-SRC			= main.cpp phonebook.cpp contact.cpp
-INC			= phonebook.hpp contact.hpp
+SRC			= main.cpp HumanA.cpp HumanB.cpp main.cpp
+INC			= HumanA.hpp HumanB.hpp Weapon.hpp
 
-NAME		= phonebook
+NAME		= violence
 
 ${NAME}:	${OBJ}
 					${CC} ${CFLAGS} ${OBJ} -o $@
