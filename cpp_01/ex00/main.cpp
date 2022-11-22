@@ -2,12 +2,10 @@
 
 int main()
 {
-	Zombie	Zombie_stack;
-	Zombie	*Zombie_heap;
+	Zombie	*Zombie_heap = NULL;
 
-	Zombie_heap = NULL;
-	Zombie_stack.randomChump("Ivan");
-	Zombie_heap = Zombie_heap->newZombie("Natasha");
+	Zombie_heap = newZombie("Heap_zombie");
+	randomChump("Stack_zombie");
+	Zombie_heap->announce();
 	delete Zombie_heap;
-	return (0);
 }

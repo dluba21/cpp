@@ -2,7 +2,7 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 CC			= c++
 RM			= rm -f
 OBJ			= ${SRC:.cpp=.o}
-SRC			= main.cpp HumanA.cpp HumanB.cpp main.cpp
+SRC			= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 INC			= HumanA.hpp HumanB.hpp Weapon.hpp
 
 NAME		= violence

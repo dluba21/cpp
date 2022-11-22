@@ -4,13 +4,10 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
-//#include <filesystem>
 #include <fstream>
 
 class	ftFile
 {
-//	1
-//	if (myfile.is_open())
 public:
 	ftFile();
 	~ftFile();

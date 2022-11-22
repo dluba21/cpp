@@ -27,6 +27,15 @@ public:
 	Fixed operator-(const Fixed& a);
 	Fixed operator*(const Fixed& a);
 	Fixed operator/(const Fixed& a);
+	bool operator==(const Fixed& a);
+	bool operator!=(const Fixed& a);
+	bool operator>(const Fixed& a);
+	bool operator<(const Fixed& a);
+	bool operator>=(const Fixed& a);
+	bool operator<=(const Fixed& a);
+
+
+	
 	static Fixed max(Fixed &a, Fixed &b);
 	static Fixed max(const Fixed &a, const Fixed &b);
 	static Fixed min(Fixed &a, Fixed &b);

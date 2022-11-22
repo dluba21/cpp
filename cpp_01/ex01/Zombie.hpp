@@ -9,11 +9,9 @@
 class Zombie
 {
 public:
-	Zombie(): _name(""){};
-	~Zombie()
-	{
-		std::cout << _name << ": Brhhhhh yaaaah\n";
-	}
+	Zombie();
+	Zombie(std::string);
+	~Zombie();
 	std::string	getName(void);
 	void		setName(std::string name);
 	void 		announce(void);

@@ -12,8 +12,8 @@ public:
 	HumanA(std::string name, Weapon &newWeapon);
 	void	attack();
 private:
-	std::string _name;
 	Weapon	*_Weapon;
+	std::string _name;
 };
 
 

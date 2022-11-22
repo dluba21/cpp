@@ -120,6 +120,36 @@ Fixed	Fixed::operator/(const Fixed& a)
 	return (Fixed(a.toFloat() / this->toFloat()));
 }
 
+bool Fixed::operator==(const Fixed& a)
+{
+	if (_value == a.value)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator==(const Fixed& a)
+{
+	if (_value == a.value)
+		return (false);
+	return (true);
+}
+
+bool Fixed::operator>(const Fixed& a)
+{
+	if (_value > a.value)
+		return (true);
+	return (false);
+}
+
+bool Fixed::operator<(const Fixed& a)
+{
+	if (_value == a.value)
+		return (true);
+	return (false);
+}
+
+
+
 
 Fixed	Fixed::min(const Fixed &a, const Fixed &b)
 {

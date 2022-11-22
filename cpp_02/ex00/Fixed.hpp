@@ -19,5 +19,4 @@ private:
 	static const int 	_fract_bits = 0;
 };
 
-//static const int	Fixed::_fract_bits = 0;
 #endif
