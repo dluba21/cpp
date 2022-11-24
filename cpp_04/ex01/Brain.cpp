@@ -24,3 +24,7 @@ Brain::~Brain()
 {
 	std::cout << "Brain destructor is called" << std::endl;
 }
+
+
+
+

@@ -122,28 +122,28 @@ Fixed	Fixed::operator/(const Fixed& a)
 
 bool Fixed::operator==(const Fixed& a)
 {
-	if (_value == a.value)
+	if (_value == a._value)
 		return (true);
 	return (false);
 }
 
-bool Fixed::operator==(const Fixed& a)
+bool Fixed::operator!=(const Fixed& a)
 {
-	if (_value == a.value)
+	if (_value == a._value)
 		return (false);
 	return (true);
 }
 
 bool Fixed::operator>(const Fixed& a)
 {
-	if (_value > a.value)
+	if (_value > a._value)
 		return (true);
 	return (false);
 }
 
 bool Fixed::operator<(const Fixed& a)
 {
-	if (_value == a.value)
+	if (_value == a._value)
 		return (true);
 	return (false);
 }
