@@ -2,8 +2,9 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 CC			= c++
 RM			= rm -f
 OBJ			= ${SRC:.cpp=.o}
-SRC			= Fixed.cpp	main.cpp
+SRC			= main.cpp Fixed.cpp
 INC			= Fixed.hpp
+
 NAME		= Fixed
 
 ${NAME}:	${OBJ}
@@ -23,4 +24,3 @@ fclean:		clean
 re: 			fclean all
 
 .PHONY : 	all clean fclean re
-

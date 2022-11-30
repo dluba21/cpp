@@ -16,8 +16,6 @@ public:
 	void		makeSound() const;
 private:
 	Brain	*_brain;
-//private:
-
 };
 
 #endif

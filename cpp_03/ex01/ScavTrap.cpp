@@ -85,8 +85,4 @@ void ScavTrap::guardGate()
 	else
 		std::cout << "ScavTrap " << this->getName() <<  " is now in Gate keeper mode."  << std::endl;
 }
-//unsigned		getHitPoints(void) const;
-//unsigned		getEnergyPoints(void) const;
-//unsigned		getAttackDamage(void) const;
-//void			getStatus(void) const;
-//std::string		getName(void) const;
+

@@ -4,7 +4,7 @@ RM			= rm -f
 OBJ			= ${SRC:.cpp=.o}
 SRC			= Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp 			RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
 INC			= Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp 		 			RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
-NAME		= Form
+NAME		= AForm
 
 ${NAME}:	${OBJ}
 					${CC} ${CFLAGS} ${OBJ} -o $@
@@ -15,7 +15,7 @@ ${NAME}:	${OBJ}
 all:			${NAME}
 
 clean:
-					${RM} ${OBJ}
+					${RM} ${OBJ} rm *_shrubbery
 
 fclean:		clean
 					${RM} ${NAME}

@@ -18,10 +18,7 @@ public:
 	void	attack(const std::string& target);
 	void	getStatus(void) const;
 
-	void		guardGate();
-//	ScavTrap
-//private:
-	
+	void		guardGate();	
 };
 
 #endif

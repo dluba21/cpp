@@ -38,7 +38,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &objRef)
 	this->_hit_points = objRef.getHitPoints();
 	this->_energy_points = objRef.getEnergyPoints();
 	this->_attack_damage = objRef.getAttackDamage();
-	std::cout << "ClapTrap " << this->getName() << " is assigned << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " is assigned " << std::endl;
 	return (*this);
 }
 

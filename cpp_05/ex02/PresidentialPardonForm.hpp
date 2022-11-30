@@ -3,20 +3,16 @@
 
 #include <iostream>
 #include <string>
-#include "Form.hpp"
+#include "AForm.hpp"
+//class Bureaucrat;
 
 class PresidentialPardonForm: public AForm
 {
 public:
 	PresidentialPardonForm(std::string target);
-	PresidentialPardonForm(PresidentialPardonForm &obj_ref);
-	PresidentialPardonForm &operator=(PresidentialPardonForm &obj_ref);
-	~PresidentialPardonForm();
-	
-	virtual void		execute(Bureaucrat const &executor);
+	virtual void		execute(Bureaucrat const &executor) const;
 private:
 	std::string	_target;
-	
 };
 
 

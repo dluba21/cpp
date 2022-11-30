@@ -6,7 +6,7 @@ AForm::AForm(): _name(""), _is_signed(false), _sign_grade(0), _exec_grade(0)
 	std::cout << "AForm default constructor is called" << std::endl;
 }
 
-AForm::AForm(const std::string &name, unsigned sign_grade, unsigned exec_grade): _name(name), _is_signed(false)
+AForm::AForm(const std::string name, unsigned sign_grade, unsigned exec_grade): _name(name), _is_signed(false)
 //хз ведь grades константы, как исключения проверить?!!!!!!!!!!!!!
 {
 	std::cout << "AForm default constructor is called" << std::endl;
@@ -44,6 +44,10 @@ AForm::~AForm()
 	std::cout << "AForm destructor is called" << std::endl;
 }
 
+
+
+
+
 AForm::GradeTooHighException::GradeTooHighException(): _msg("Grade is too high!")
 {
 }
@@ -72,28 +76,31 @@ const char *AForm::GradeTooLowException::what(void) const throw()
 }
 
 
-
-
-AForm::FormIsNotSignedException::FormIsNotSignedException(): _msg("Form exception: form is not signed!")
-{
-}
-
 const char *AForm::FormIsNotSignedException::what(void) const throw()
 {
 	return (_msg);
 }
 
+AForm::FormIsNotSignedException::FormIsNotSignedException(): _msg("Form exception: form is not signed!")
+{
+}
+
+AForm::FormIsNotSignedException::FormIsNotSignedException(const char *msg): _msg(msg)
+{
+}
 
 
 
 
 
-const std::string	&AForm::getName(void) const
+
+
+std::string	AForm::getName(void) const
 {
 	return (_name);
 }
 
-unsigned	&AForm::getExecGrade(void) const
+unsigned	AForm::getExecGrade(void) const
 {
 	return (_exec_grade);
 }
@@ -103,10 +110,32 @@ bool	AForm::getIsSigned(void) const
 	return (_is_signed);
 }
 
-unsigned	&AForm::getSignGrade(void) const
+unsigned	AForm::getSignGrade(void) const
 {
 	return (_sign_grade);
 }
+
+
+void	AForm::setName(const std::string name)
+{
+	_name = name;
+}
+
+void	AForm::setIsSigned(unsigned is_signed)
+{
+	_is_signed = is_signed;
+}
+
+void	AForm::setSignGrade(unsigned sign_grade)
+{
+	_sign_grade = sign_grade;
+}
+
+void	AForm::setExecGrade(unsigned exec_grade)
+{
+	_exec_grade = exec_grade;
+}
+
 
 void	AForm::beSigned(Bureaucrat &bureaucrat)
 {
@@ -114,6 +143,7 @@ void	AForm::beSigned(Bureaucrat &bureaucrat)
 	{
 		if (bureaucrat.getGrade() > _sign_grade)
 			throw (GradeTooLowException());
+//		std::cout << _name << " is signed by " <<  bureaucrat.getName() << " successfully!" << std::endl;
 		_is_signed = true;
 	}
 	catch (const std::exception &e)
@@ -129,11 +159,9 @@ std::ostream &operator<<(std::ostream &os, const AForm &AForm)
 
 void	AForm::execute(Bureaucrat const &executor) const
 {
-	try
-	{
-		if (_is_signed == false)
-			throw (FormIsNotSignedException());
-		if (_exec_grade < executor.getGrade())
-			throw (GradeTooLowException("Grade to execute is too low!"));
-	}
+
+	if (_is_signed == false)
+		throw (FormIsNotSignedException());
+	if (_exec_grade < executor.getGrade())
+		throw (GradeTooLowException("Grade to execute is too low!"));
 }
